@@ -34,7 +34,6 @@ function OnTriggerEnter(other : Collider) //When it hits a collider
 	if(other.gameObject.tag == "Enemy") //With an "Enemy" tag
 		{
 			Explode(); //Explode
-			other.gameObject.SendMessage("TakeDamage",myDamageAmount);
 		}
 }
 

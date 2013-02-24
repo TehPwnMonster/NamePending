@@ -1,7 +1,7 @@
 #pragma strict
 
-var hp = int;
-var projectile = GameObject;
+var hp = 10;
+var Enemy = GameObject;
 
 
 function Update(){
@@ -15,7 +15,7 @@ function Update(){
 }
 	
 function OnTriggerEnter(){
-	if(projectile)
+	if(Enemy)
 	{
 		(hp--);
 	}

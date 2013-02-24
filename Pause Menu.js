@@ -19,10 +19,8 @@ var url = "unity.html"; //For Restart button
 var statColor:Color = Color.yellow; //Colour of the GUI
 var credits:String[]=[
 	"A Names Pending Production",
-	"Programming by Ben",
-	"Cool stuff by Jake"]; //What the Credits show 
+	"Programming by Ben"]; //What the Credits show 
 var crediticons:Texture[]; //specify texture for the credits
-Screen.lockCursor = true; //lock cursor to the game screen
 enum Page {
 	None,Main,Options,Credits, Exit //Lists all pages in pause menu
 }
@@ -271,7 +269,6 @@ function PauseGame() {
     AudioListener.pause = true; //Stop audio listener (Camera)
     if (pauseFilter) pauseFilter.enabled = true; //If you have a pause filter, turn it on
     currentPage = Page.Main; //Sends you to the main pause menu screen
-	Screen.lockCursor = false; //unlocks cursor
 }
 
 function UnPauseGame() {
@@ -279,7 +276,6 @@ function UnPauseGame() {
 	AudioListener.pause = false; //Unpause the camera
 	if (pauseFilter) pauseFilter.enabled = false; //Remove the pause filter
 	currentPage = Page.None; //Set the currentPage to nothing
-	Screen.lockCursor = true; //Lock the cursor back to the screen
 	Time.timeScale = 1.0; 
 	if (IsBeginning() && start != null) { //If fresh game - start from the beginning
 		start.active = true;
